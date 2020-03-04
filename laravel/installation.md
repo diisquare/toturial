@@ -6,7 +6,22 @@
 
 默认已安装好apache php mysql
 
-查看php拓展 php-m 安装 apt-get install php7.2-xml
+检查模块
+
+- PHP >= 7.2.5
+- BCMath PHP Extension
+- Ctype PHP Extension
+- Fileinfo PHP extension
+- JSON PHP Extension
+- Mbstring PHP Extension
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+
+查看php拓展的命令是 `php -m` 
+
+ 安装 apt-get install php7.2-xml
 
 - composer 安装见官网 建议换成阿里云镜像
 - NodeJs
@@ -22,7 +37,7 @@ git clone 【项目所在地址】
 git clone https://github.com/diisquare/file-system.git
 ```
 
-这是你的文件应该长这个样子
+这时你的文件应该长这个样子
 
 ```shell
 # tree ./ -L 2 -a 
@@ -137,6 +152,10 @@ php artisan migrate
 
 <img src="http://img.yp51md.club/dii2020-03-04%2016-00-45%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="php artisan migrate" style="zoom: 80%;" />
 
+> [!NOTE] `.env` 文件的作用在于，他将和不同环境密切相关的内容提取了出来，让我们可以快速的配置本地的 laravel 环境。事实上所有的	`.env` 文件的内容会加载都 `/config`的文件里，实际上这是一个挺巧妙的设计。
+>
+> 反正所有用到第二遍的东西我们都会想办法把他弄出来。这样修改的时候就会比较方便。我们自己写的代码写应该这样。
+
 运行
 
 ```shell
@@ -147,7 +166,7 @@ php artisan storage:link
 
 > [!NOTE]
 >
-> 你肯定不允许让用户随随便便得看到你的后端代码，所以我们会用 apache 指向`/`文件夹，这样的会其他的文件都不会被访问到，因此你可以发现我们的css和js文件都在/public文件夹下。为了让用户访问`/storage`里的内容只好通过外链的方式了。
+> 你肯定不允许让用户随随便便得看到你的后端代码，所以我们会用 apache 指向`/`文件夹，这样的会其他的文件都不会被访问到，因此你可以发现我们的 css 和 js 文件都在 `/public` 文件夹下。为了让用户访问`/storage`里的内容只好通过外链的方式了。
 
 
 
@@ -157,7 +176,7 @@ php artisan storage:link
 
 > [!DANGER] 
 >
-> 我的配置仅供参考，请参看附录：AMP的安装和配置 里的官方文档。laravel 提供了 rewrite 的策略来提供 pretty url 。请参看[文档](https://laravel.com/docs/7.x#pretty-urls)。注意这里配置的端口号需要和`.env`中的APP_URL一致。
+> 我的配置仅供参考，请参看附录：AMP的安装和配置 里的官方文档。laravel 提供了 rewrite 的策略来提供 pretty url 。请参看[文档](https://laravel.com/docs/7.x#pretty-urls)。注意`.env`中的APP_URL需要和这里配置的端口号一致。
 
 到此为止，一般的项目就能通过你设置的 ip 地址访问了。但 `file-system` 用了 [laravel-admin](https://www.laravel-admin.org/) 的包。
 
