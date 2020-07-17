@@ -12,6 +12,7 @@
     * 
 * [第三章:laravel简介](ch3.md)
     * [第一节：从服务器拉取代码](laravel/installation.md)
+    * [第二节：laravel的运行流程](laravel/workflow.md)
 * [附录](ch-1/installAMP.md)
     * [A: AMP的安装和配置](ch-1/installAMP.md)
     * [B: 好用的工具](ch-1/tools.md)

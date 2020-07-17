@@ -122,10 +122,10 @@ npm 的安装的包在 `package.json` 里。
 
 在mysql中创建一个数据库。如叫 diisquare6.0
 
-复制.example.env => .env 并配置.env文件
+复制.env.example => .env 并配置.env文件
 
 ```
-cp .example.env .env
+cp .env.example .env
 ```
 
 配置大概长这个样子
